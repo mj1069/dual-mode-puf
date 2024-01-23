@@ -21,7 +21,9 @@ module dual_top #(parameter N = 128) (
       );
     end
   endgenerate
+  
   counter16 ct1(n[N-1],reset,ct_out1);
   counter16 ct2(m[N-1],reset,ct_out2);
-
+  comparator16 cmp(ct_out1,ct_out2,out);
+  
 endmodule 
