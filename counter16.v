@@ -2,11 +2,13 @@ module counter16(
   input in, reset,
   output [15:0]count
 );
+  reg [15:0] count_reg = 16'b0;
 
   always @(in) begin
     if(!reset)
-      count <= count + 1'b1;
+      count_reg <= count + 1'b1;
     else
-      count <= 16'b0;
+      count_reg <= 16'b0;
   end
+  assign count = count_reg;
 endmodule
