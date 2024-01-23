@@ -1,4 +1,4 @@
-module mux_block(
+module demux_mux_block(
   input in_up,in_down,sel,
   output out_up,out_down
 );
