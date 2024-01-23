@@ -1,4 +1,4 @@
-module demux2x1(
+module demux1x2(
   input in, sel,
   output reg out_0, out_1
 );
