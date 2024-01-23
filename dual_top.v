@@ -4,6 +4,8 @@ module dual_top #(parameter N = 128) (
 );
   wire [N-1:0] m;
   wire [N-1:0] n;
+  wire [15:0] ct_out1;
+  wire [15:0] ct_out2;
 
   demux_mux_block block0 (in,in,sel[0],m[0],n[0]);
 
@@ -19,6 +21,7 @@ module dual_top #(parameter N = 128) (
       );
     end
   endgenerate
-  d_latch sr(n[N-1],m[N-1],reset,out);
+  counter16 ct1(n[N-1],reset,ct_out1);
+  counter16 ct2(m[N-1],reset,ct_out2);
 
 endmodule 
